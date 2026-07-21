@@ -83,6 +83,61 @@ section[id],
   }
 }
 
+/* ---- animated gradient border (YeetCode tile) ----
+   A conic gradient (a color wheel) painted on a wrapper that's 1px larger
+   than the card; rotating the wheel makes the colors travel around the rim.
+   Same VS Code Dark+ tokens as .text-gradient. @property lets the custom
+   angle interpolate; without support it degrades to a static gradient rim. */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.card-glow {
+  background: conic-gradient(
+    from var(--border-angle),
+    #569cd6,
+    #4ec9b0,
+    #b5cea8,
+    #dcdcaa,
+    #ce9178,
+    #c586c0,
+    #569cd6
+  );
+  animation: border-rotate 6s linear infinite;
+}
+
+@keyframes border-rotate {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+/* ---- code rain (YeetCode tile background) ----
+   Two stacked copies of the same code scroll up by exactly one copy's
+   height (-50%), then loop — seamless. Masked so it fades at the edges. */
+.code-rain {
+  opacity: 0.16;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 18%,
+    black 82%,
+    transparent
+  );
+}
+
+.code-rain-track {
+  animation: code-scroll 36s linear infinite;
+}
+
+@keyframes code-scroll {
+  to {
+    transform: translateY(-50%);
+  }
+}
+
 /* respect users who ask for less motion */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -94,6 +149,12 @@ section[id],
     transition: none;
   }
   .text-gradient {
+    animation: none;
+  }
+  .card-glow {
+    animation: none;
+  }
+  .code-rain-track {
     animation: none;
   }
 }
