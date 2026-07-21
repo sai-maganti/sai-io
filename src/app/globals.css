@@ -1,26 +1,107 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ---- Tailwind v4 theme tokens (CSS-first config; no tailwind.config.js) ---- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* single restrained accent — a cool, premium blue-violet */
+  --color-accent: #8ab4ff;
+  --color-accent-2: #b69bff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #050505;
+  --foreground: #ededed;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* sticky-nav offset so anchored section headings aren't hidden under the bar */
+section[id],
+[id="top"] {
+  scroll-margin-top: 5rem;
+}
+
+/* subtle accent selection */
+::selection {
+  background: color-mix(in oklab, var(--color-accent) 30%, transparent);
+  color: #fff;
+}
+
+/* ---- scroll-reveal: hidden until JS adds .is-visible (see Reveal.tsx) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* gradient text helper for the one "colorful" flourish — animated shimmer.
+   Palette = VS Code Dark+ syntax tokens (keyword blue, type teal, number
+   green, function yellow, string orange, keyword purple), so the words read
+   as syntax-highlighted code. First/last stops match for a seamless loop. */
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    #9cdcfe,
+    #569cd6,
+    #4ec9b0,
+    #b5cea8,
+    #dcdcaa,
+    #ce9178,
+    #c586c0,
+    #9cdcfe
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: saturate(1.1);
+  animation: gradient-sweep 8s linear infinite;
+}
+
+@keyframes gradient-sweep {
+  to {
+    background-position: 400% center;
+  }
+}
+
+/* respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .text-gradient {
+    animation: none;
+  }
+}
+
+/* no-JavaScript fallback: reveal depends on JS, so show everything if it's off */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
