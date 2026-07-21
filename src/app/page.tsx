@@ -160,17 +160,17 @@ export default function Home() {
                 <p className="mt-5 text-lg leading-relaxed text-zinc-400">
                   A supplementary playground for LeetCode and NeetCode that
                   cares about exactly one thing:{" "}
-                  <span className="text-zinc-200">the Hards.</span> No easies,
-                  no mediums to pad your streak &mdash; just the problems that
-                  actually humble you.
+                  <span className="text-zinc-200">the Hards.</span>{" "}
+                  No easies, no mediums to pad your streak &mdash; just the
+                  problems that actually humble you.
                 </p>
                 <p className="mt-4 text-lg leading-relaxed text-zinc-400">
-                  If you want to test your mettle, this is where you come to find
-                  out where it stands. And when a problem wins &mdash; because
+                  If you want to test your coding chops, step into the coding
+                  crucible. And when a problem wins &mdash; because
                   some of them will &mdash; there&rsquo;ll be written
                   walkthroughs and video explanations, so you leave having{" "}
                   <span className="italic text-zinc-300">learned</span> it
-                  rather than just rage-quit. Yeet it.
+                  rather than just rage-quitting. Remember: Yeet it.
                 </p>
 
                 <p className="mt-8 font-mono text-sm text-zinc-500">

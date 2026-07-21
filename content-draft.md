@@ -55,7 +55,7 @@ Things I'm building
 
 A supplementary playground for LeetCode and NeetCode that cares about exactly one thing: **the Hards.** No easies, no mediums to pad your streak — just the problems that actually humble you.
 
-The idea is simple: if you want to test your mettle, this is where you come to find out where it stands. And when a problem wins — because some of them will — there'll be written solution walkthroughs and video explanations, so you leave having *learned* it rather than just rage-quit. Yeet it.
+The idea is simple: if you want to test your coding chops, step into the coding crucible. And when a problem wins — because some of them will — there'll be written solution walkthroughs and video explanations, so you leave having *learned* it rather than just rage-quitting. Remember: Yeet it.
 
 *Live site coming soon — this card becomes the link-out once it ships.*
 
