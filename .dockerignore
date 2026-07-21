@@ -1,0 +1,17 @@
+# Not needed to build the image — keeps the build context small and fast
+node_modules
+.next
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+
+# private notes (never bake into an image)
+interview-notes.md
+content-draft.md
+
+# local tooling
+.claude
+AGENTS.md
+CLAUDE.md
