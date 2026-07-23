@@ -79,10 +79,10 @@ export default function Home() {
             <div className="mt-10 space-y-6 text-lg leading-relaxed text-zinc-400">
               <Reveal delay={60}>
                 <p>
-                  I didn&rsquo;t start in software. I was a Chemistry major,
-                  pre-med, fully pointed at medical school. Then came my senior
-                  year, when I realized this wasn&rsquo;t it. I wasn&rsquo;t
-                  excited.
+                  I didn&rsquo;t start in software. I spent most of college as
+                  a Chemistry major, and by my senior year I had to be honest
+                  with myself: it wasn&rsquo;t what I wanted to spend my life
+                  doing.
                 </p>
               </Reveal>
 
@@ -254,7 +254,7 @@ export default function Home() {
                         that cares about exactly one thing:{" "}
                         <span className="text-zinc-200">the Hards.</span>{" "}
                         No easies, no mediums to pad your streak. Just the
-                        problems that actually humble you.
+                        problems that actually teach you.
                       </p>
                       <p className="mt-4 text-lg leading-relaxed text-zinc-400">
                         If you want to test your coding chops, step into the
